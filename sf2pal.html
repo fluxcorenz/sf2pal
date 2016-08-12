@@ -1,0 +1,56 @@
+<canvas id="sprite" width="256px" height="256px" style="float: left; width: 256px; height: 256px; image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;">Your browser does not support HTML5 canvas. Please try Chrome.</canvas><br />
+<div id="pal2" style="width:200px; float: left"></div>
+<div style="float: left">
+<form>
+        Character: <select name="Char" id="char" onchange="selectChar()">
+<option value="ryu">Ryu</option>
+<option value="honda">E.Honda</option>
+<option value="blanka">Blanka</option>
+<option value="guile">Guile</option>
+<option value="ken">Ken</option>
+<option value="chunli">Chun Li</option>
+<option value="zangief">Zangief</option>
+<option value="dhalsim">Dhalsim</option>
+<option value="boxer">Boxer</option>
+<option value="claw">Claw</option>
+<option value="sagat">Sagat</option>
+<option value="dictator">Dictator</option>
+        </select>
+        Palette: <select name="Palette" id="palSel" onchange="redraw()"></select><br />
+Palmod: <input type="text" id="palmod" /><br />
+ROM: <input type="text" id="rom" /><input type="checkbox" id="byteswap" />byteswap
+</form>
+Link: <input type="text" id="link" readonly />
+</div>
+
+<div id="colour_pick" style="display: none; background-color: white; border: 1px solid black; z-index: 400; width:128px">
+
+  <div id="gamut">
+    <canvas id="c_canvas0" width="128" height="128"></canvas><br />
+    <canvas id="c_canvas1" width="128" height="16"></canvas>
+  </div>
+  <div id="controls">
+        <div id="r" style="width: 100%">
+            <label style="display: inline-block; width: 32%; margin-left: 2px;">R:</label>
+            <input id="rinp" type="text" style="display:inline-block;width:55%"/>
+        </div>
+        <div id="g" style="width: 100%">
+            <label style="display: inline-block; width: 32%; margin-left: 2px;">G:</label>
+            <input id="ginp" type="text" style="display:inline-block;width:55%"/>
+        </div>           
+        <div id="b" style="width: 100%">
+            <label style="display: inline-block; width: 32%; margin-left: 2px;">B:</label>
+            <input id="binp" type="text" style="display:inline-block;width:55%"/>
+        </div>
+        <div style="width: 100%">
+          <label style="display: inline-block; width: 32%; margin-left: 2px;">Hex:</label> <input id="hexcode" type="text" style="display:inline-block;width:55%"/>
+        </div>
+        <div style="width: 100%">
+          <label style="display: inline-block; width: 32%; margin-left: 2px;">GBXR:</label> <input id="gbxr" type="text" style="display:inline-block;width:55%"/>
+        </div>
+    </div>
+</div>
